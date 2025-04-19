@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const backendUrl = "http://localhost:4000/api/admin"; // Set base URL
+const backendUrl = import.meta.env.VITE_BACKEND_URL + "/api/admin";
+
 
 const Login = ({ setToken }) => {
   const navigate = useNavigate();
