@@ -21,8 +21,9 @@ app.use(express.json());
 // CORS Configuration
 const allowedOrigins =
   process.env.NODE_ENV === "production"
-    ? ["https://shiplify.in"]
+    ? process.env.ALLOWED_ORIGINS.split(",")
     : ["http://localhost:5173", "http://localhost:5174"];
+
 
 app.use(
   cors({
